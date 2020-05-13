@@ -3,7 +3,7 @@
     class RectangleMannager extends MysqlBd{
 
         public function __construct(){
-            $this->className="rectangle";
+            $this->className="Rectangle";
         }
 
         public function create($data){

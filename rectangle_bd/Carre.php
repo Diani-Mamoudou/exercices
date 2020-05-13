@@ -19,7 +19,6 @@
             }
 
             public function demiPerimetre(){
-                var_dump($this->longueur);
                 return $this->longueur*2;
             }
 

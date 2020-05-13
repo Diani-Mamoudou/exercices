@@ -1,6 +1,6 @@
 <?php
     interface Imanager{
 
-        public function hydrate($row);
+        public function hydrate(array $row);
     }
 ?>

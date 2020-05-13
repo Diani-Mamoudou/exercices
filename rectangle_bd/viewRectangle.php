@@ -22,10 +22,10 @@
                 if ($validator->is_valid()){
                     $validator->compare($longueur,$largeur,'longueur','largeur');
                     if ($validator->is_valid()){
+                        
+
                         $rectangle=new Rectangle($longueur,$largeur);
-                        $rectangle->setLongueur($longueur);
-                        $rectangle->setLargeur($largeur);
-                       $manager->create($rectangle);
+                        $manager->create($rectangle);
 
                     }
                 }
@@ -98,6 +98,8 @@
     </div>
 
     <?php
+
+       
         $rectangles=$manager->findAll();
         if (count($rectangles)>0){?>
             <table class="table container table-bordered">

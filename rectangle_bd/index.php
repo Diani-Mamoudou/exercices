@@ -12,7 +12,7 @@
 
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->

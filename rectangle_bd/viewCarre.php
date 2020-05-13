@@ -18,8 +18,8 @@
                 if ($validator->is_valid()){
                     $validator->is_positif($longueur,'longueur');
                     if ($validator->is_valid()){
+
                         $carre=new Carre($longueur);
-                        $carre->setLongueur($longueur);
                         $manager->create($carre);
 
                     }
@@ -97,7 +97,7 @@
                         </td>
                     </tr>
                     <?php
-                    }
+                 }
                     ?>
                 </tbody>
             </table>

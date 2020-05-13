@@ -16,23 +16,27 @@
             } catch (Exception $ex) {
                 die("verifier les parametre de connexion".$ex->getMessage());
             }    
-
             
         }
         
         private function closeConnexion(){
             if($this->pdo!=null){
                 $this->pdo=null;
-                }
+            }
         }
 
         public function ExecuteSelect($sql){
+
+            
             $this->getConnexion();
+                        
             $query=$this->pdo->query($sql);
             $data=[];
             while($row=$query->fetch()){
+               
                 $data[]=new $this->className($row);
             }
+            
             $this->closeConnexion();
             return $data;
         }

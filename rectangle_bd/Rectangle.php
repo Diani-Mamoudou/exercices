@@ -10,13 +10,18 @@
 
         //METHODE 
           //ATTIRBUTS D'INSTANCES concret
-            public function __construct($largeur=null,$row=null){
+            public function __construct(array $row=null, $largeur=null){
+             
                 if($largeur!=null){
-                    $this->largeur=$largeur;
+
+                    $this->setLargeur($largeur);
+                    
                 }
                 if($row!=null){
+
                     $this->hydrate($row);
                 }
+                
             }
 
            
@@ -27,20 +32,38 @@
 
            
             public function setLargeur($largeur){
-                $this->largeur=$largeur;
+                
+                $largeur = (real) $largeur;
+                if(is_real($largeur)){
+
+                    $this->largeur=$largeur;
+                }
             }
                     
             //getter et setter methodes static concrete
             
-            public function hydrate($row){
-                $this->longueur=$row['longueur'];
-                $this->largeur=$row['largeur'];
-                $this->id=$row['id'];
+            public function hydrate(array $row){
+                //Les keys de $row correspondent au nom de methode de rectangle
+                
+                foreach ($row as $key => $value) {
+                   
+                   $nameMethode = 'set'. ucfirst($key);
+                   try {
+
+                        if(method_exists($this, $nameMethode)){
+                            
+                            $this->$nameMethode($value);
+                        }
+                   } catch (\Throwable $th) {
+                       
+                        die($th->getMessage() ."sur la ligne". $th->getLine());
+                   }
+                   
+                }
             }
 
 
             public function demiPerimetre(){
-                die(var_dump($this));
                 return ($this->longueur + $this->largeur);
             }
 

@@ -15,12 +15,12 @@
             //instance c'est specifique à un objet de la classe
                 //concrete dont on connais la definition
                     //constructeurs permet de construire un objet
-            public funtion u__construct($longueur=null,$largeur=null){
+            public function __construct($longueur=null,$largeur=null){
                 if($longueur!=null){
-                    $this->longueur=$longueur
+                    $this->longueur=$longueur;
                 }
                 if($largeur!=null){
-                    $this->largeur=$largeur
+                    $this->largeur=$largeur;
                 }
             }
             //ainsi c'est une surcharge du contructeur alors pour crer rectangle on fait $rectangle=new rectangle($longueur,$largeur) dans index

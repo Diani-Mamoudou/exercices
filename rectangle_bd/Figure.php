@@ -17,7 +17,14 @@
         }
 
         public function setLongueur($longueur){
-            $this->longueur=$longueur;
+
+            $longueur = (real) $longueur;
+
+            if(is_real($longueur)){
+                
+                $this->longueur=$longueur;
+            }
+            
         }
 
         public function setId($id){
